@@ -16,4 +16,4 @@ spring:
         - id: olimpiadas-service
           uri: lb://olimpiadas-service
           predicates:
-          - Path=/disciplina/**,/customer/**,/customer_image/**
+          - Path=/disciplina/**,/category/**,/customer_image/**
