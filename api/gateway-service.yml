@@ -1,0 +1,19 @@
+server:
+  port: 8083
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+      
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: olimpiadas-service
+          uri: lb://olimpiadas-service
+          predicates:
+          - Path=/disciplina/**,/customer/**,/customer_image/**
